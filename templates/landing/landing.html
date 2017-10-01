@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+
+
+</head>
+<body>
+<div class="general-container">
+    <div class="container top-container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1 class="title">Магазин скоро откроется!</br>
+                 Оставляйте Ваш емайл в форме ниже:</h1>
+                <div>
+                    <form action="" method="post" class="form-inline text-center"> {% csrf_token %}
+                        <div class="form-group">
+                            <label>Ваше имя:</label>
+                            <input name="{{ form.name.name }}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Ваш емейл:</label>
+                            <input name="{{ form.email.name }}" class="form-control">
+                        </div>
+                        <button class="btn btn-primary btn-orange">Отправить</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--Jquery-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+</html>
