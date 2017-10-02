@@ -1,4 +1,5 @@
 from django.db import models
+from products.models import Product
 
 
 class Status(models.Model):
@@ -15,13 +16,14 @@ class Status(models.Model):
         verbose_name_plural = 'Статусы заказа'
 
 
-
 class Order(models.Model):
-    customer_email = models.EmailField(blank=True, null=True, default=None)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)#total price for all products in order
     customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    customer_email = models.EmailField(blank=True, null=True, default=None)
     customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)
-    status = models.ForeignKey(Status)
+    customer_address = models.CharField(max_length=128, blank=True, null=True, default=None)
     comments = models.TextField(blank=True, null=True, default=None)
+    status = models.ForeignKey(Status)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -33,10 +35,12 @@ class Order(models.Model):
         verbose_name_plural = 'Заказы'
 
 
-
-class ProductInOrders(models.Model):
+class ProductInOrder(models.Model):
     order = models.ForeignKey(Order, blank=True, null=True, default=None)
     product = models.ForeignKey(Product, blank=True, null=True, default=None)
+    nmb = models.IntegerField(default=1)
+    price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)#price*nmb
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
