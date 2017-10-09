@@ -5,8 +5,8 @@ html, body{
     background-color: #edeef0;
 }
 
-.section-top {
-    margin: 20px;
+.navbar{
+    margin-bottom: 0;
 }
 
 .product-item{
@@ -15,8 +15,18 @@ html, body{
     position: relative;
     border: 1px solid lightgrey;
     text-align: center;
-    padding:5px;
+    padding:10px 0 10px 0;
     margin-bottom: 10px;
+}
+
+.discount-container{
+    position: absolute;
+    top: 43%;
+    background: #e06c32;
+    width: 30%;
+    color: white;
+    font-weight: 700;
+    padding: 3px;
 }
 
 .add-to-card-btn{
@@ -24,4 +34,18 @@ html, body{
     bottom: 15px;
     left: 50%;
     transform: translate(-50%, 0%);
+}
+.text-center{
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.footer{
+    margin-bottom: -100px;
+    background-color: white;
+    height: 200px;
+}
+
+.section-top{
+    margin-bottom: 20px;
 }
