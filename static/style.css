@@ -40,12 +40,39 @@ html, body{
     margin-top: 40px;
 }
 
+.wrapper{
+    min-height: 100%;
+}
+
+.wrapper-content{
+    overflow: auto;
+    padding-bottom: 180px;
+}
+
 .footer{
-    margin-bottom: -100px;
+    position: relative;
+    margin-top: -180px;
+    height: 180px;
+    clear: both;
     background-color: white;
-    height: 200px;
+}
+
+.section-delivery{
+    height: 300px;
+    background-color: darkgreen;
+    text-align: center;
+    color: white;
 }
 
 .section-top{
     margin-bottom: 20px;
+}
+
+.product-description-tabs{
+    padding: 10px;
+}
+
+.product-image-item{
+    margin-bottom: 5px;
+    padding: 10px;
 }
